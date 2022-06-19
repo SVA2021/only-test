@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+#some assets
+/assets
+
 # production
 /build
 
