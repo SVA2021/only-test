@@ -34,7 +34,8 @@ const GlobalStyle = createGlobalStyle`
 	font-display: swap;
 }
 body {
-	background-color: ${props => props.theme.colors.body};
+	background-color: ${props => props.theme.colors.common.white};
+	box-sizing: border-box;
 	font-family: HelveticaNeue, Helvetica, Sans-Serif;
 }
 `;

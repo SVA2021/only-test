@@ -1,15 +1,15 @@
 import 'styled-components';
 
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    borderRadius?: string;
-    colors: {
+	export interface DefaultTheme {
+		borderRadius?: string
+		colors: {
 			common: {
 				white: string
 				black: string
 			}
-      primary: string
-      secondary: string
+			primary: string
+			secondary: string
 			text: {
 				primary: string
 				secondary: string
@@ -17,10 +17,11 @@ declare module 'styled-components' {
 			error: {
 				primary: string
 				secondary: string
+				pink: string
+				background: string
 			}
 			disabled: string
-			body: string
 			input: string
-    }
-  }
+		}
+	}
 }
