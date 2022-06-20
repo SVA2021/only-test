@@ -9,3 +9,23 @@ template in figma is [here](https://www.figma.com/file/jyTp0gnYwVBkppUgab90ju/On
 - react-router
 - styled-components
 - react-hook-form.
+
+## main scripts
+
+yarn start
+yarn build
+
+### Test Data for checking:
+
+	{
+		login: 'testuser',
+		password: '111111',
+	},
+	{
+		login: 'testuser2',
+		password: '222222',
+	},
+	{
+		login: 'testuser3',
+		password: '333333',
+	}
