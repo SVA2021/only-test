@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 const RequiredLabel = styled.span`
-	display: inline-block;
+	display: block;
+	margin-top: 8px;
 	font-size: 14px;
 	color: ${props => props.theme.colors.error.primary};
 `

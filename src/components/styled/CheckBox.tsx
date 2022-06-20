@@ -1,8 +1,12 @@
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import Label from './Label';
 
 interface IProps {
 	checked: boolean;
 	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	labelWrap?: boolean;
+	label?: string;
 }
 
 const Square = styled.div`
@@ -33,29 +37,38 @@ const StyledCheckbox = styled.div<{ checked: boolean }>`
   background: transparent; 
   border-radius: 4px;
 	border: 1px solid black;
+  transition: all 150ms;
 
 	${HiddenCheckbox}:focus + & {
     box-shadow: 0 0 0 2px  ${props => props.theme.colors.primary} ;
   }
 	
   ${Square} {
-    visibility: ${(props) => (props.checked ? "visible" : "hidden")}
+    visibility: ${props => props.checked ? "visible" : "hidden"}
   }
 `
 
 const CheckboxContainer = styled.div`
   display: inline-block;
+	margin-right: 14px;
   vertical-align: middle;
 `
 
-const CheckBox: React.FC<IProps> = ({ checked, ...props }) => {
-	return (
-		<CheckboxContainer>
+const CheckBox: React.FC<IProps> = ({
+	checked,
+	labelWrap = true,
+	label = 'checkbox',
+	...props }) => {
+	const content = (
+		<CheckboxContainer >
 			<HiddenCheckbox checked={checked} {...props} />
 			<StyledCheckbox checked={checked}>
 				<Square />
 			</StyledCheckbox>
 		</CheckboxContainer>
 	);
+
+	return labelWrap ? <Label>{content}{label}</Label> : <>{content}</>;
 };
+
 export default CheckBox;

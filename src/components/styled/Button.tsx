@@ -9,7 +9,7 @@ type TButton = {
 const Button = styled.button<TButton>`
   border-radius:  ${props => props.theme.borderRadius};
   display: block;
-  margin: 10px auto;
+  margin: 0 auto;
 	padding: 1rem;
 	height: 60px;
 	width: ${props => props.size || (props.fullWidth ? '100%' : 'auto')};
@@ -20,6 +20,14 @@ const Button = styled.button<TButton>`
 	color: ${props => props.primary ? props.theme.colors.common.white : props.theme.colors.common.black};
 	background: ${props => props.disabled ? props.theme.colors.disabled :
 		props.primary ? props.theme.colors.primary : props.theme.colors.secondary};
+`
+
+export const SubmitButton = styled(Button)`
+		margin-top: 40px;
+`
+
+export const LogOutButton = styled(Button)`
+		margin-top: 50px;
 `
 
 export default Button;
